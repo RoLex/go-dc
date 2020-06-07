@@ -3,7 +3,7 @@ package nmdc
 import (
 	"testing"
 
-	"github.com/direct-connect/go-dc/tiger"
+	"github.com/RoLex/go-dc/tiger"
 )
 
 var searchCases = []casesMessageEntry{

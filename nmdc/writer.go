@@ -7,7 +7,7 @@ import (
 	"io"
 	"sync/atomic"
 
-	"github.com/direct-connect/go-dc/lineproto"
+	"github.com/RoLex/go-dc/lineproto"
 )
 
 // NewWriter creates a new NMDC protocol writer with a default buffer size.

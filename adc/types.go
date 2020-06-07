@@ -3,8 +3,8 @@ package adc
 import (
 	"bytes"
 	"fmt"
-	"github.com/direct-connect/go-dc/adc/types"
-	"github.com/direct-connect/go-dc/tiger"
+	"github.com/RoLex/go-dc/adc/types"
+	"github.com/RoLex/go-dc/tiger"
 	"strings"
 )
 

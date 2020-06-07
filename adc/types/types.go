@@ -6,7 +6,7 @@ import (
 	"encoding"
 	"fmt"
 
-	"github.com/direct-connect/go-dc/tiger"
+	"github.com/RoLex/go-dc/tiger"
 )
 
 const base32Enc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"

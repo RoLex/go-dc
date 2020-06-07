@@ -3,7 +3,7 @@ package tlskp
 import (
 	"crypto/tls"
 
-	"github.com/direct-connect/go-dc/keyprint"
+	"github.com/RoLex/go-dc/keyprint"
 )
 
 // ErrInvalidKeyPrint is returned when an expected keyprint doesn't match any of the peer certificates.

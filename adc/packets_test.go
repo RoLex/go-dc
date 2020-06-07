@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/RoLex/go-dc/adc/types"
+	"github.com/direct-connect/go-dc/adc/types"
 	"github.com/stretchr/testify/require"
 )
 

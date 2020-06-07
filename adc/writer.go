@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/RoLex/go-dc/lineproto"
+	"github.com/direct-connect/go-dc/lineproto"
 )
 
 // NewWriter creates a new ADC protocol writer with a default buffer size.

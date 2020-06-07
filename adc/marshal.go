@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/RoLex/go-dc/tiger"
+	"github.com/direct-connect/go-dc/tiger"
 )
 
 var (

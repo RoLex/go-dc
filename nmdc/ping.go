@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/RoLex/go-dc/types"
+	"github.com/direct-connect/go-dc/types"
 )
 
 func init() {

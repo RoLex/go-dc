@@ -1,4 +1,4 @@
-module github.com/rolex/go-dc
+module github.com/direct-connect/go-dc
 
 go 1.12
 

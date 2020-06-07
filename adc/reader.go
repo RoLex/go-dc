@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/RoLex/go-dc/lineproto"
+	"github.com/direct-connect/go-dc/lineproto"
 )
 
 func NewReader(r io.Reader) *Reader {

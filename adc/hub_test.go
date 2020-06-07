@@ -3,7 +3,7 @@ package adc
 import (
 	"testing"
 
-	"github.com/RoLex/go-dc/tiger"
+	"github.com/direct-connect/go-dc/tiger"
 )
 
 var hubCases = []casesMessageEntry{

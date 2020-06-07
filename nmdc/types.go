@@ -8,7 +8,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/RoLex/go-dc/tiger"
+	"github.com/direct-connect/go-dc/tiger"
 )
 
 var invalidCharsNameI [256]bool

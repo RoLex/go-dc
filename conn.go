@@ -4,8 +4,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/RoLex/go-dc/adc"
-	"github.com/RoLex/go-dc/nmdc"
+	"github.com/direct-connect/go-dc/adc"
+	"github.com/direct-connect/go-dc/nmdc"
 )
 
 // ParseAddr parses an DC address as a URL.

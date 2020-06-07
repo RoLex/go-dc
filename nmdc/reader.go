@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"sync/atomic"
 
-	"github.com/RoLex/go-dc/lineproto"
+	"github.com/direct-connect/go-dc/lineproto"
 )
 
 const (

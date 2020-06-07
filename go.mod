@@ -1,4 +1,4 @@
-module github.com/direct-connect/go-dc
+module github.com/RoLex/go-dc
 
 go 1.12
 

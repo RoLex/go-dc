@@ -1,4 +1,4 @@
-module github.com/RoLex/go-dc
+module github.com/rolex/go-dc
 
 go 1.12
 

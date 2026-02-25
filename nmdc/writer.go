@@ -3,7 +3,6 @@ package nmdc
 import (
 	"bytes"
 	"compress/zlib"
-	"errors"
 	"io"
 	"sync/atomic"
 
@@ -57,7 +56,7 @@ func (w *Writer) SetEncoder(enc *TextEncoder) {
 // WriteKeepAlive writes an empty (keep alive) message.
 // It is caller's responsibility to flush the writer.
 func (w *Writer) WriteKeepAlive() error {
-	return w.WriteLine([]byte{lineDelim})
+	return w.WriteLine([]byte{Delimiter})
 }
 
 // WriteMsg encodes and writes a NMDC protocol message.
@@ -96,46 +95,4 @@ func (w *Writer) ZOnLevel(lvl int) error {
 	}
 	// flushes
 	return w.EnableZlibLevel(lvl)
-}
-
-func escapeString(sw *bytes.Buffer, s string) error {
-	last := 0
-	for i := 0; i < len(s); i++ {
-		b := s[i]
-		if b == 0x00 {
-			return errors.New("invalid characters in string")
-		} else if escapeCharsString[b] == "" {
-			continue
-		}
-		if last != i {
-			sw.WriteString(s[last:i])
-		}
-		last = i + 1
-		sw.WriteString(escapeCharsString[b])
-	}
-	if last != len(s) {
-		sw.WriteString(s[last:])
-	}
-	return nil
-}
-
-func escapeName(sw *bytes.Buffer, s string) error {
-	last := 0
-	for i := 0; i < len(s); i++ {
-		b := s[i]
-		if invalidCharsNameI[b] {
-			return errors.New("invalid characters in name")
-		} else if escapeCharsName[b] == "" {
-			continue
-		}
-		if last != i {
-			sw.WriteString(s[last:i])
-		}
-		last = i + 1
-		sw.WriteString(escapeCharsName[b])
-	}
-	if last != len(s) {
-		sw.WriteString(s[last:])
-	}
-	return nil
 }

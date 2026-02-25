@@ -16,11 +16,15 @@ const (
 )
 
 var (
-	errReaderClosed      = errors.New("reader is closed")
-	errBufferExhausted   = errors.New("message is too long")
-	errZlibAlreadyActive = errors.New("zlib already activated")
-	errZlibNotActive     = errors.New("zlib not activate")
+	errReaderClosed      = errors.New("lineproto: reader is closed")
+	errBufferExhausted   = errors.New("lineproto: message is too long")
+	errZlibAlreadyActive = errors.New("lineproto: zlib already activated")
+	errZlibNotActive     = errors.New("lineproto: zlib not activate")
 )
+
+var _ interface {
+	Unwrap() error
+} = (*ErrProtocolViolation)(nil)
 
 type ErrProtocolViolation struct {
 	Err error
@@ -28,6 +32,10 @@ type ErrProtocolViolation struct {
 
 func (e *ErrProtocolViolation) Error() string {
 	return fmt.Sprintf("protocol error: %v", e.Err)
+}
+
+func (e *ErrProtocolViolation) Unwrap() error {
+	return e.Err
 }
 
 var (
@@ -105,6 +113,12 @@ func (r *bufReader) Scan(delim byte) ([]byte, bool, error) {
 	r.off += len(buf)
 	return buf, false, nil
 }
+
+type LineReader interface {
+	ReadLine() ([]byte, error)
+}
+
+var _ LineReader = (*Reader)(nil)
 
 // Reader is a line reader that supports the zlib on/off switching procedure
 // required by hub-to-client and client-to-client connections.

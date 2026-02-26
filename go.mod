@@ -9,4 +9,5 @@ require (
 	golang.org/x/text v0.3.2
 )
 
-replace github.com/direct-connect/go-dcpp => ../go-dcpp
+// uncomment if using local modified go-dcpp
+//replace github.com/direct-connect/go-dcpp => ../go-dcpp
